@@ -40,11 +40,12 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun enrollInCourse(course: Course) {
+    fun enrollInCourse(course: Course, onResult: (Pair<String, Boolean>) -> Unit) {
         viewModelScope.launch {
             val enroll = homeRepository.IsEnrollInCourse(course.id)
             if (enroll?.courseId != course.id ) {
-                homeRepository.enrollInCourse(course)
+                val result = homeRepository.enrollInCourse(course)
+                onResult.invoke(result)
                 _enrollInCourseStateFlow.update { true }
             }
         }

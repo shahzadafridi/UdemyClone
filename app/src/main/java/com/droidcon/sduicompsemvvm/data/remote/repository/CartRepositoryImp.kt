@@ -19,7 +19,7 @@ class CartRepositoryImp(
             courseDao.insertCourseToCart(Cart(courseId = course.id))
             "Successfully added to cart" to true
         } else {
-            "Failed to cart" to false
+            "Failed add to cart" to false
         }
     }
 

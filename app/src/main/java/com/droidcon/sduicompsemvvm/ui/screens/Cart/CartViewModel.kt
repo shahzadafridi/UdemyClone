@@ -21,9 +21,10 @@ class CartViewModel @Inject constructor(
     val cartCoursesStateFlow: StateFlow<UiState<List<Course>>> = _cartCoursesStateFlow
 
 
-    fun addToCart(course: Course) {
+    fun addToCart(course: Course, onResult: (Pair<String,Boolean>) -> Unit) {
         viewModelScope.launch {
-            cartRepository.addToCart(course)
+            val result = cartRepository.addToCart(course)
+            onResult.invoke(result)
         }
     }
 

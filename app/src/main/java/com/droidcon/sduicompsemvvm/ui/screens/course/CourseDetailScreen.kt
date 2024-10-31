@@ -24,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -52,6 +53,7 @@ import com.droidcon.sduicompsemvvm.ui.theme.captionTextStyle
 import com.droidcon.sduicompsemvvm.ui.theme.primaryLabelStyle
 import com.droidcon.sduicompsemvvm.ui.theme.subTitleBarStyle
 import com.droidcon.sduicompsemvvm.ui.theme.titleBarStyle
+import com.droidcon.sduicompsemvvm.util.toast
 
 @Composable
 fun CourseDetailScreen(
@@ -61,6 +63,7 @@ fun CourseDetailScreen(
     cartViewModel: CartViewModel = hiltViewModel(),
     learningViewModel: LearningViewModel = hiltViewModel()
 ) {
+    val context = LocalContext.current
     LaunchedEffect(Unit) {
         viewModel.isEnrollInCourse(data)
     }
@@ -213,9 +216,13 @@ fun CourseDetailScreen(
                 modifier = Modifier
                     .clickable {
                         if (data.isFree) {
-                            viewModel.enrollInCourse(data)
+                            viewModel.enrollInCourse(data) {
+                                context.toast(it.first)
+                            }
                         } else {
-                            cartViewModel.addToCart(data)
+                            cartViewModel.addToCart(data) {
+                                context.toast(it.first)
+                            }
                         }
                     }
                     .fillMaxWidth()

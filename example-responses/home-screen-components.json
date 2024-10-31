@@ -1,0 +1,27 @@
+[
+  {
+    "id": "news-card-1",
+    "title": "Good News! SDUI with Compose course is on its way.",
+    "short_desc":"In my personal experience, this architecture has proved to be invaluable. In one of my apps, I started with Firebase on the back end which is great for quickly building your app. I knew eventually I’d have to shift to my own server.",
+    "thumbnail":"https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fblog_post_page%2Fcontent%2Fcover_image_file%2Fcover_image%2F1100272%2Fretina_1708x683_cover-android-apps-mvvm-with-clean-architecture-ce042b0da370a289e0ee95fd997f25c3.png",
+    "date":"30-10-2023 09:33 PM",
+    "type":"news-card"
+  },
+  {
+    "id": "podcast-card-1",
+    "title": "Good News! SDUI with Compose course is on its way.",
+    "short_desc":"In my personal experience, this architecture has proved to be invaluable. In one of my apps, I started with Firebase on the back end which is great for quickly building your app.",
+    "thumbnail":"https://www.macworld.com/wp-content/uploads/2023/11/apple-silicon-m3-a17.jpg",
+    "date":"30-10-2023 09:33 PM",
+    "type":"podcast-card",
+    "duration":"dafdsafasfdsfa"
+  },
+  {
+    "id": "news-card-2",
+    "title": "How to change aspect ratio on Mac screen.",
+    "short_desc":"There is no stock way to adjust the resolution of a Retina Display Mac. According to Apple: “Retina displays use scaled resolutions rather than the specific resolution settings that external displays use. If you need to use a different resolution than those available on the built-in display, attach an external display via HDMI, Thunderbolt or DisplayPort.",
+    "thumbnail":"https://images.macworld.co.uk/cmsdata/features/3646710/aspect_ratio_scaled_option.jpg",
+    "date":"09-10-2022 09:33 PM",
+    "type":"news-card"
+  }
+]
